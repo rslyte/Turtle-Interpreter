@@ -1,0 +1,13 @@
+N ANGLE SCALE I DIST
+
+N := 20        # number of turns in spiral
+ANGLE := 45    # turning angle
+DIST := 10      # step side
+SCALE := 0.85   # amount to scale step size with
+I := 1
+WHILE I <= N DO
+  FORWARD DIST
+  LEFT ANGLE
+  DIST := DIST * SCALE
+  I := I + 1
+OD

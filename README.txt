@@ -1,0 +1,39 @@
+Ryan Slyter
+10799467
+ryan.slyter100@email.wsu.edu
+
+IN THIS ARCHIVE:
+
+A file (assignment3) containing:
+
+this README.txt
+Makefile
+scanner.c
+scanner.h
+turtle.c
+turtle.h
+newsym.c <- new data structure for assignment 3, symtab.c/h are not used now
+newsym.h
+parser.c <- main solution
+spiral.turtle <- test file to show the scope, take off a variable dec at the top to show stderr output, etc.
+funky.turtle <- more example turtle files which have small programs written in the language
+gasket.turtle
+iftest.turlte
+maze1.turtle
+turtle.pdf <- Did this in google docs, it's the grammar rules and what I did to change them (not a whole lot, mainly semantics changes)
+
+INSTRUCTIONS TO RUN THE PROGRAM: just type 'make' and it will make the 'parser' executable.
+to run the program with test files: ./parser < spiral.turtle > file.pgm
+
+***Tested in Fedora 19.
+
+PROGRAM DESCRIPTION: 
+This was a project in CS355: Programming Language Design. We had already designed a 'turtle' interpreter for the 'turtle' graphics language. The scanner was written by Dr. Thanh Dang, currently an associate professor at WSU Vancouver. We were tasked with going back to our interepreter and changing it to support static scoping of variables. We also had to show the change in the turlte grammar, as shown in turtle.pdf. 
+
+The program will run the .turtle source files through the grammer using STATIC scoping for the indentifiers, creating statements trees based on the grammar which contain expression trees within those. It will then excute the statement trees by evaluating the expression trees which will either return calculations or commands to the turtle API. The outputted pgm files are the goal of the program. NOTE: I am fully admitting that I do not explicity free allocated memory for this assignment because my destroyStmt() destroyExpr() were causing my program to break, so I am doing what the CS360 book says by *implicitly* freeing it.
+
+RESULTS: Everything should work, I run a file like spiral.turtle with the change that all the variables used in the program are declared at the beginning of the source file (global decs and then an inner scope where no local vars were declared in the case of this particlar file) and it works. If I try to assign a value to a variable without it being declared first and outputs an error saying that I didn't declare it first. Also, if you initialize the same string in the same scope it will give you an error like C would.
+
+NOTES FOR THE ASSIGNMENT***: Grammar changes and semantic changes are explicitly described in turtle.pdf, I do not talk about them in this file.
+
+

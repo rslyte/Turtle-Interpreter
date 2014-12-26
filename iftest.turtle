@@ -1,0 +1,7 @@
+#Assummes assignment test and action test works
+a := 4
+IF a >= 5 THEN
+	FORWARD a + 10 
+ELSE 
+	FORWARD 25
+FI
